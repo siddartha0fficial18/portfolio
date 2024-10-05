@@ -43,7 +43,7 @@ body::-webkit-scrollbar{
 }
 
 .photu:nth-child(1) {
-    background-image: url('/Dennis-Snellenberg/images/two-good-co.png');
+    background-image: url('/images/two-good-co.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; /* Prevents image tiling */
@@ -53,7 +53,7 @@ body::-webkit-scrollbar{
 
 
 .photu:nth-child(2){
-    background-image: url('/Dennis-Snellenberg/images/cyber.png');
+    background-image: url('/images/cyber.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; /* Prevents image tiling */
@@ -62,7 +62,7 @@ body::-webkit-scrollbar{
 }
 
 .photu:nth-child(3){
-    background-image: url('/Dennis-Snellenberg/images/rejouice.png');
+    background-image: url('/images/rejouice.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; /* Prevents image tiling */
@@ -71,7 +71,7 @@ body::-webkit-scrollbar{
 }
 
 .photu:nth-child(4){
-    background-image: url('/Dennis-Snellenberg/images/ochi.png');
+    background-image: url('/images/ochi.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; /* Prevents image tiling */
