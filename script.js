@@ -68,7 +68,7 @@ gsap.from("#helpingbrand p", {
 })
 
 gsap.from(".slideshow1", {
-    scrollTrigger:{
+    scrollTrigger: {
         trigger: "#three",
         start: "0% 50%",
         end: "100% 100%",
@@ -76,12 +76,15 @@ gsap.from(".slideshow1", {
         // markers: true
     },
     x: -200,
-    duration: 1
-
-})
+    opacity: 0,      // Fade in
+    scale: 0.8,      // Start smaller
+    rotation: -15,   // Slight rotation for a more dynamic entrance
+    duration: 1.5,   // Slower duration for a smoother effect
+    ease: "power3.out",  // Use easing for smoother transitions
+});
 
 gsap.from(".slideshow2", {
-    scrollTrigger:{
+    scrollTrigger: {
         trigger: "#three",
         start: "0% 50%",
         end: "100% 100%",
@@ -89,9 +92,68 @@ gsap.from(".slideshow2", {
         // markers: true
     },
     x: 150,
-    duration: 1
+    opacity: 0,      // Fade in
+    scale: 0.8,      // Start smaller
+    rotation: 15,    // Opposite rotation for variety
+    duration: 1.5,   // Same duration to keep consistency
+    ease: "power3.out",  // Easing for smoother effect
+    delay: 0.2       // Small delay to stagger between slideshows
+});
+// Create a GSAP timeline for coordinated animations
+// Scroll-based animation with GSAP timeline
+const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#three",
+      start: "0% 50%",
+      end: "100% 100%",
+      scrub: 2,
+      // markers: true  // Uncomment for debugging
+    }
+});
 
-})
+// Slide animation for slideshow1
+timeline.fromTo(".slideshow1", 
+  {
+    x: -300,       // Start further left
+    opacity: 0,    // Start invisible
+    scale: 0.8,    // Start smaller
+    rotation: -15, // Slight rotation for dynamic entrance
+  }, 
+  {
+    x: 200,        // Move to right
+    opacity: 1,    // Fade to visible
+    scale: 1,      // Restore to normal size
+    rotation: 0,   // Straighten out
+    duration: 1.5, // Duration of the animation
+    ease: "power3.out",
+  }
+);
+
+// Slide animation for slideshow2
+timeline.fromTo(".slideshow2", 
+  {
+    x: 300,        // Start further right
+    opacity: 0,    // Start invisible
+    scale: 0.8,    // Start smaller
+    rotation: 15,  // Opposite rotation
+  }, 
+  {
+    x: -200,       // Move to left
+    opacity: 1,    // Fade to visible
+    scale: 1,      // Restore to normal size
+    rotation: 0,   // Straighten out
+    duration: 1.5, // Same duration to keep consistency
+    ease: "power3.out",
+  }, "-=1.5" // Overlap start with slideshow1 animation
+);
+
+// Infinite horizontal sliding animation for continuous side-by-side movement
+gsap.to(".slideshow1, .slideshow2", {
+  x: "-=400",     // Moves both elements side by side to the left
+  repeat: -1,     // Infinite loop
+  duration: 10,   // Slow movement for a smooth transition
+  ease: "linear", // Linear movement for consistency
+});
 
 gsap.from("#getintouch", {
     scrollTrigger:{
