@@ -1,2 +1,1 @@
-# Dennis-Snellenberg
-This project is created by Amarjeet Chaudhary, this is a practice project created for the final challenge at Sheryians Coding School Bhopal, Madhya Pradesh
+To view It : https://siddartha0fficial18.github.io/portfolio/
